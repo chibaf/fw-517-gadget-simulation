@@ -15,7 +15,7 @@ th.start() # start thread
 while True:  # infinite loop
   if th.is_alive()==False:  #when thread ends
     result = q.get()  # take queu values
-    print("thread: "+str(i)+" "+str(result))
+    print("thread: "+str(i)+" / "+str(result))
     i=i+1
     if i>5:  # execute total five thread 
       break;  # exit loop
