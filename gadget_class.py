@@ -11,4 +11,4 @@ class gagdet():
       return self.tc
       
   def logger(self):
-      rtuen self.tc
+      return self.tc
