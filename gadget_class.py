@@ -4,7 +4,7 @@ class gagdet():
     self.tc=0.0
     self.ssr1=0
     
-  def set_gpio(self,ssr): # GPIO
+  def set_gpio(self,ssr): # GPIO on/off
       self.ssr1=ssr
       
   def step(self,n):  # change Tc by time step
