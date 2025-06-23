@@ -4,11 +4,15 @@ class gagdet():
     self.tc=0.0
     self.ssr1=0
     
-  def set_gpio(self,ssr):
+  def set_gpio(self,ssr): # GPIO
       self.ssr1=ssr
-      if self.ssr1==1:
-        self.tc=self.tc+1
-      return self.tc
       
-  def logger(self):
+  def step(self,n):  # change Tc by time step
+    for i in range(0,n):
+      if self.ssr1==1:
+        self.tc=self.tc+0.5
+      else:
+        self.tc=self.tc-0.5
+      
+  def logger(self):  # values of logger
       return self.tc
