@@ -3,6 +3,7 @@ from thread_one_class import thread_one  # import thread body
 import threading
 import queue  # library for queu operation
 import time
+import matplotlib.pyplot as plt
 
 i=1   # counter
 thread1=thread_one(i)
@@ -13,6 +14,8 @@ raspi=gagdet() # initialzation
 raspi.set_gpio(0)
 #raspi.step(2)
 
+y=[0]*10
+x=range(0, 10, 1)
 q.put(raspi.logger())
 th.start()
 while True:
@@ -26,5 +29,12 @@ while True:
     th.start()
   raspi.step(2)
   time.sleep(2)
+  
+  y.pop(-1)
+  y.insert(0,raspi.logger())
+  plt.clf()
+  plt.ylim(-.2, .2)
+  plt.plot(x,y)
+  plt.pause(0.1)
   
   print(raspi.logger())
