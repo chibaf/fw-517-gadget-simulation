@@ -9,9 +9,9 @@ thread1=thread_one(i)
 q =queue.Queue()  # queue which stores a result of a thread
 th = threading.Thread(target=thread1.thread, args=(i,q),daemon=True)
 
-raspi=gagdet()
+raspi=gagdet() # initialzation
 raspi.set_gpio(0)
-raspi.step(2)
+#raspi.step(2)
 
 q.put(raspi.logger())
 th.start()

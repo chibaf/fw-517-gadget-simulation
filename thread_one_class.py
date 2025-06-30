@@ -9,8 +9,8 @@ class thread_one:
     a=q.get()
     #print("a")
     if a<0.0:
-      ret=1
+      ssr=1
     else:
-      ret=0
-    q.put(ret)   # set value to queu
+      ssr=0
+    q.put(ssr)   # set value to queu
     return
