@@ -6,11 +6,10 @@ class thread_one:
   def thread(self,i,q): # class body
     import time
     import random
-    a=q.get()
-    #print("a")
+    a=q.get()   # get Tc temp
     if a<0.0:
-      ssr=1
+      ssr=1   # ssr on
     else:
-      ssr=0
-    q.put(ssr)   # set value to queu
+      ssr=0   # ssr off
+    q.put(ssr)   # set ssr value to queu
     return

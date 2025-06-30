@@ -10,16 +10,16 @@ thread1=thread_one(i)
 q =queue.Queue()  # queue which stores a result of a thread
 th = threading.Thread(target=thread1.thread, args=(i,q),daemon=True)
 
-raspi=gagdet() # initialzation
+raspi=gagdet() # create class
 raspi.set_gpio(0)
-#raspi.step(2)
+raspi.step(2)
 
 y=[0]*10
 x=range(0, 10, 1)
 q.put(raspi.logger())
 th.start()
 while True:
-  if th.is_alive()==False:
+  if th.is_alive()==False:  # thread dosen't run
     i=i+1
     a=q.get()
     raspi.set_gpio(a)
@@ -28,7 +28,7 @@ while True:
     q.put(raspi.logger())
     th.start()
   raspi.step(2)
-  time.sleep(2)
+  time.sleep(1)
   
   y.pop(-1)
   y.insert(0,raspi.logger())
