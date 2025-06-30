@@ -6,9 +6,11 @@ class thread_one:
   def thread(self,i,q): # class body
     import time
     import random
-#    time.sleep(1)
-    #a=q.get()
+    a=q.get()
     #print("a")
-    ret = [random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1)]  # return value
+    if a<0.0:
+      ret=1
+    else:
+      ret=0
     q.put(ret)   # set value to queu
     return
