@@ -10,9 +10,9 @@ class gagdet():
   def step(self,n):  # change Tc by time step
     for i in range(0,n):
       if self.ssr1==1:
-        self.tc=self.tc+0.5
+        self.tc=self.tc+0.05
       else:
-        self.tc=self.tc-0.5
+        self.tc=self.tc-0.05
       
   def logger(self):  # values of logger
       return self.tc
