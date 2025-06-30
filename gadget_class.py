@@ -8,11 +8,13 @@ class gagdet():
       self.ssr1=ssr
       
   def step(self,n):  # change Tc by time step
+    import random
+    r=random.randint(0,9)
     for i in range(0,n):
       if self.ssr1==1:
-        self.tc=self.tc+0.05
+        self.tc=self.tc+0.05*r*0.1
       else:
-        self.tc=self.tc-0.05
+        self.tc=self.tc-0.05*r*0.1
       
   def logger(self):  # values of logger
       return self.tc
